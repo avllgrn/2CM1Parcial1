@@ -1,31 +1,32 @@
 from os import system
+from random import randrange
 
-def unaFuncionConUnaListaDeEnteros():
-    lista = [21, 2, -3, 42, 5]
-    print(lista, type(lista), len(lista))
+def unaFuncionConInput():
+    V = []
+    print(V, type(V), len(V))
 
-    for i in range(len(lista)):
-        print(i, lista[i], type(lista[i]))
+    n = int(input('Cuantos? '))
 
-def unaFuncionConUnaListaDeFlotantes():
-    lista = [21.1, 2.5, -3.25, -1.75]
-    print(lista, type(lista), len(lista))
+    for i in range(n):
+        dato = float(input(f'Ingresa el dato {i} '))
+        V.append(dato)
+        print(i, V[i], type(V[i]))
+    print(V, type(V), len(V))
 
-    for i in range(len(lista)):
-        print(i, lista[i], type(lista[i]))
+def unaFuncionConRandRange():
+    V = []
+    print(V, type(V), len(V))
 
-def unaFuncionConUnaListaDeStrings():
-    lista = ['casa', 'ventana', 'puerta']
-    print(lista, type(lista), len(lista))
+    n = int(input('Cuantos? '))
 
-    for i in range(len(lista)):
-        print(i, lista[i], type(lista[i]))
+    for i in range(n):
+        V.append(randrange(101)/10)
+        print(i, V[i], type(V[i]))
+    print(V, type(V), len(V))
 
 if __name__ == '__main__':
     system('cls')
-    unaFuncionConUnaListaDeEnteros()
+    unaFuncionConInput()
     print()
-    unaFuncionConUnaListaDeFlotantes()
-    print()
-    unaFuncionConUnaListaDeStrings()
+    unaFuncionConRandRange()
     print()
