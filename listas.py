@@ -15,9 +15,11 @@ if __name__ == '__main__':
     print('\n\n')
         
     s = 0
-    for i in range(n):
+    i=0
+    while i<n:
         s = s+V[i]
         #print(f'V[{i}] = {V[i]}\ts = {s}')
+        i += 1
 
     print(f's = {s}')
     if n>0:
@@ -26,32 +28,40 @@ if __name__ == '__main__':
 
     menor = V[0]
     posMenor = 0
-    for i in range(n):
+    i=0
+    while i<n:
         if V[i] < menor:
             menor = V[i]
             posMenor = i
         #print(f'menor = {menor} = V[{i}]')
+        i += 1
     print(f'menor = {menor} = V[{posMenor}]')
 
 
     mayor = V[0]
     posMenor = 0
-    for i in range(n):
+    i=0
+    while i<n:
         if V[i] > mayor:
             mayor = V[i]
             posMenor = i
         #print(f'mayor = {mayor} = V[{i}]')
+        i += 1
     print(f'mayor = {mayor} = V[{posMenor}]')
 
     menorQuePromedio = 0
-    for i in range(n):
+    i=0
+    while i<n:
         if V[i] < promedio:
             menorQuePromedio += 1
+        i += 1
     print(f'Hay {menorQuePromedio} valores menores que el promedio')
 
 
     mayorQuePromedio = 0
-    for i in range(n):
+    i=0
+    while i<n:
         if V[i] > promedio:
             mayorQuePromedio += 1
+        i += 1
     print(f'Hay {mayorQuePromedio} valores mayores que el promedio')
