@@ -1,67 +1,54 @@
 from os import system
 from random import randrange
 
+def generaRand(tam, ini, fin):
+    l = []
+
+    i=0
+    while i  < tam:
+        l.append(randrange(ini, fin))
+        i += 1
+
+    return l
+
+def muestraLista(l):
+    tam = len(l)
+    i=0
+    while i  < tam:
+        print(f'[{i}] = {l[i]}')
+        i += 1
+
+def concatenaListas(l1, l2):
+    l3 = []
+
+    tam = len(l1)
+    i=0
+    while i  < tam:
+        l3.append(l1[i])
+        i += 1
+
+    tam = len(l2)
+    i=0
+    while i  < tam:
+        l3.append(l2[i])
+        i += 1
+
+    return l3
+
 if __name__ == '__main__':
     system('cls')
-    
-    V = []
     n = int(input('Dame n '))
+    m = int(input('Dame m '))
 
-    for i in range(n):
-        V.append(randrange(-100, 101))
+    A = generaRand(n,-100,101)
+    B = generaRand(m,-100,101)
 
-    for i in range(n):
-        print(f'V[{i}] = {V[i]}')
-    print('\n\n')
-        
-    s = 0
-    i=0
-    while i<n:
-        s = s+V[i]
-        #print(f'V[{i}] = {V[i]}\ts = {s}')
-        i += 1
+    C = concatenaListas(A, B)
 
-    print(f's = {s}')
-    if n>0:
-        promedio = s/n
-        print(f'promedio = {promedio}')
-
-    menor = V[0]
-    posMenor = 0
-    i=0
-    while i<n:
-        if V[i] < menor:
-            menor = V[i]
-            posMenor = i
-        #print(f'menor = {menor} = V[{i}]')
-        i += 1
-    print(f'menor = {menor} = V[{posMenor}]')
-
-
-    mayor = V[0]
-    posMenor = 0
-    i=0
-    while i<n:
-        if V[i] > mayor:
-            mayor = V[i]
-            posMenor = i
-        #print(f'mayor = {mayor} = V[{i}]')
-        i += 1
-    print(f'mayor = {mayor} = V[{posMenor}]')
-
-    menorQuePromedio = 0
-    i=0
-    while i<n:
-        if V[i] < promedio:
-            menorQuePromedio += 1
-        i += 1
-    print(f'Hay {menorQuePromedio} valores menores que el promedio')
-
-
-    mayorQuePromedio = 0
-    i=0
-    while i<n:
-        if V[i] > promedio:
-            mayorQuePromedio += 1
-        i += 1
-    print(f'Hay {mayorQuePromedio} valores mayores que el promedio')
+    print('\nA')
+    muestraLista(A)
+    print('\nB')
+    muestraLista(B)
+    print('\nC')
+    muestraLista(C)
+    
