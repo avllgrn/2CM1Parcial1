@@ -26,9 +26,9 @@ if __name__ == '__main__':
     print()
 
     x = int(input('Qué quieres borrar? '))
-    if x in L:
+    while x in L:
         L.remove(x)
-        
+
     print(f'L{L}, {type(L)}, tam = {len(L)}')
     muestraLista(L)
     print()
